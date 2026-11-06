@@ -5,10 +5,9 @@ import re
 import urllib.request
 import xml.etree.ElementTree as ET
 
-# ---------------- PAGE SETTINGS ----------------
 st.set_page_config(
     page_title="The AI Travel Master",
-    page_icon="✈️",
+    page_icon="🗺",
     layout="wide"
 )
 
@@ -29,7 +28,7 @@ CLIMATE_RANGES = {
     "Hot (above 28°C)": (28, None),
 }
 
-# ---------------- DATA & RECOMMENDATION ----------------
+
 @st.cache_data
 def load_data():
     try:
@@ -141,7 +140,7 @@ def recommend_cities(df, daily_budget, climate_preference):
     return matches.head(5)
 
 
-# ---------------- PAGE DESIGN ----------------
+
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap');
@@ -219,7 +218,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---------------- USER INPUTS ----------------
+
 st.subheader("Your travel preferences")
 col1, col2 = st.columns(2)
 
@@ -241,7 +240,7 @@ with col2:
 
 search = st.button("Find my destinations ✨", type="primary", use_container_width=True)
 
-# ---------------- RECOMMENDATIONS ----------------
+
 try:
     cities = prepare_data(load_data())
     try:
