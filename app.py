@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 st.set_page_config(
     page_title="The AI Travel Master",
-    page_icon="🗺",
+    page_icon="🧭",
     layout="wide"
 )
 
